@@ -6,6 +6,7 @@ let audioCtx;
 let freq = 0;
 
 let infoField;
+
 //wait until html document is loaded so that we can access the keyboard input field
 document.addEventListener('DOMContentLoaded', function(event) { 
   //locationField = document.getElementById("location");
@@ -27,10 +28,16 @@ oscillator.start();
 function sonify(){
   console.log(locationField.value);
 
+
+
+  
 fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/'+locationField.value +'?key=YH5QF5SWJL5LZ8SFPZFT2RCC2')
-	.then(response => response.json())
+.then(response => response.json())
 	.then(response => {
-    freq = response.days[0].temp + 50; console.log(freq - 50); 
+    console.log(response);
+    console.log("the weather over the next few days is:" + response.days[0].temp + " " + response.days[1].temp + " " + response.days[2].temp);
+    console.log("the wind gust over the next few days is:" + response.days[0].windgust + " " + response.days[1].windgust + " " + response.days[2].windgust);
+    freq = response.days[0].temp * 2; console.log(freq / 2); 
     oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime); 
     audioCtx.resume();
     infoField.innerHTML = "the weather in " + locationField.value + " is " + response.days[0].temp
