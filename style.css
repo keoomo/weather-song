@@ -1,13 +1,14 @@
 html, body {
-  color:whitesmoke;
-  font-family: "Helvetica";
-  background: salmon;
+  color:rgb(34, 35, 43);
+  font-family: "Momo Signature", serif;
+  background: rgb(114, 218, 250);
   font-size:12px;
+  border-width: 30px;
 }
 
 button {
   background:dodgerblue;
-  color: whitesmoke;
+  color: rgb(36, 50, 122);
   border-radius:30px;
   border-width:1px;
   border-style: none;
@@ -22,7 +23,7 @@ input {
   border-width:1px;
   border-style:dashed;
   border-radius:30px;
-  border-color:whitesmoke;
+  border-color:rgb(0, 99, 133);
   margin-top:0px;
   padding-top:0px;
   height: 20px;
