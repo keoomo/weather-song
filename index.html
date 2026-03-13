@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="script.js"></script>
+   <script src="script.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <span>Location: <input type="text" id="location" value="pick a place"></span>
-  <button onclick="sonify()">sonify</button>
+  <button onclick="sonify()">Visualize Weather</button>
   <button onclick="stop()">stop</button>
   <p id = "info">
-    Search for a location to "hear" 🔊 it's temperature.
+    Search for a location to generate a landscape based on its weather
   </p>
- 
+  <canvas id = "landscape" width = "400" height = "400" style = "border: 10px solid #0021c6"></canvas>
 </body>
 </html>
 
